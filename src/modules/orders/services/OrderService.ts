@@ -20,10 +20,11 @@ export class OrderService {
     const queryBuilder = getRepository(Order).createQueryBuilder("o");
 
     queryBuilder
-      .select(["o", "c.names", "c.lastNames", "n.name", "os.name"])
+      .select(["o", "c.names", "c.lastNames", "n.name", "os.name", "t.name"])
       .innerJoin("o.orderStatus", "os")
       .innerJoin("o.customer", "c")
-      .innerJoin("o.neighborhood", "n");
+      .innerJoin("o.neighborhood", "n")
+      .innerJoin("n.town", "t");
 
     if (status) {
       queryBuilder.where("os.id = :status", { status });

@@ -8,7 +8,7 @@ export class ProductService {
   async getOrderProducts(orderId: number): Promise<Product[]> {
     return await getRepository(Product)
       .createQueryBuilder("p")
-      .select(["p.id"])
+      .select(["p"])
       .where("p.order = :orderId", { orderId })
       .getMany();
   }

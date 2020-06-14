@@ -25,6 +25,7 @@
   "dependencies": {
     "class-transformer": "^0.2.3",
     "class-validator": "^0.12.2",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "fortjs": "^1.15.0",
     "fortjs-swagger": "^1.2.0",
@@ -33,6 +34,7 @@
     "typeorm": "^0.2.25"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.6",
     "@types/jest": "^24.0.15",
     "@types/node": "^10.17.24",
     "@umijs/preset-react": "^1.5.5",

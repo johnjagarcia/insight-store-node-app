@@ -3,12 +3,14 @@ import { Fort, MustacheViewEngine } from "fortjs";
 import { routes } from "./routes";
 import { Swagger } from "fortjs-swagger";
 import * as path from "path";
+import { CorsWall } from "./walls/CorsWall";
 
 export class App extends Fort {
   constructor() {
     super();
     this.routes = routes;
     this.viewEngine = MustacheViewEngine;
+    this.walls = [CorsWall];
   }
 
   async initSwagger() {

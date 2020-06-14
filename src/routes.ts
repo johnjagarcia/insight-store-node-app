@@ -11,6 +11,7 @@ import { DesignColorController } from "./modules/products/controllers/DesignColo
 import { CustomerController } from "./modules/customers/controllers/CustomerController";
 import { CourierController } from "./modules/couriers/controllers/CourierController";
 import { OrderController } from "./modules/orders/controllers/OrderController";
+import { ProductController } from "./modules/products/controllers/ProductController";
 
 export const routes: ParentRoute[] = [
   {
@@ -60,5 +61,9 @@ export const routes: ParentRoute[] = [
   {
     path: "/api/orders",
     controller: OrderController,
+  },
+  {
+    path: "/api/products",
+    controller: ProductController,
   },
 ];

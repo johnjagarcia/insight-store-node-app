@@ -9,10 +9,9 @@ import {
   Route,
   ExpectBody,
   textResult,
-  ExpectQuery,
 } from "fortjs";
 import { OrderService } from "../services/OrderService";
-import { Summary, Description, Response, Body, Query } from "fortjs-swagger";
+import { Summary, Description, Response, Body } from "fortjs-swagger";
 import { plainToClass } from "class-transformer";
 import { CreateOrderDto } from "../dto/CreateOrderDto";
 import { Order } from "../../../shared/entities/Order";
@@ -28,10 +27,9 @@ export class OrderController extends Controller {
 
   @Summary("Get orders")
   @Description("return orders according to filters")
-  @Query("registerDate", "yyyy-mm-dd")
   @Response(HTTP_STATUS_CODE.Ok, [Order])
   @DefaultWorker()
-  async getCouriers() {
+  async getOrders() {
     try {
       const registerDate = this.query.registerDate;
       const status = this.query.status;
